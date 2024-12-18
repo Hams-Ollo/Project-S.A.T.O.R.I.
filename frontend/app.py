@@ -25,11 +25,12 @@ import streamlit as st
 import requests
 from dotenv import load_dotenv
 import os
+import time
 
 # Load environment variables
 load_dotenv()
 
-# Configure page
+# Configure page with custom theme
 st.set_page_config(
     page_title="S.A.T.O.R.I. AI",
     page_icon="🧠",
@@ -37,47 +38,74 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Title and description
-st.title("S.A.T.O.R.I. AI")
-st.markdown("**System for Agentic Tasks, Orchestration, and Real-time Intelligence**")
+# Add custom CSS for better visibility
+st.markdown("""
+    <style>
+    .success-message { color: #28a745; }
+    .error-message { color: #dc3545; }
+    .info-message { color: #17a2b8; }
+    </style>
+""", unsafe_allow_html=True)
 
-# Sidebar
+# Title and description with loading animation
+with st.spinner('🌟 Initializing S.A.T.O.R.I. AI...'):
+    time.sleep(1)  # Simulate initialization
+    st.title("🧠 S.A.T.O.R.I. AI")
+    st.markdown("**System for Agentic Tasks, Orchestration, and Real-time Intelligence**")
+
+# Sidebar with status indicators
 with st.sidebar:
-    st.header("Navigation")
+    st.header("🎯 Navigation")
+    
+    # System Status
+    st.subheader("🔧 System Status")
+    
+    # Check API connection with a progress bar
+    with st.spinner('Checking API connection...'):
+        try:
+            response = requests.get(f"http://localhost:{os.getenv('API_PORT', '8000')}")
+            if response.status_code == 200:
+                st.success("⚡ Backend API: Connected")
+                st.info(f"🔄 API Version: {response.json().get('version', 'Unknown')}")
+            else:
+                st.error("❌ Backend API: Connection Error")
+        except requests.exceptions.ConnectionError:
+            st.error("❌ Backend API: Offline")
+    
+    # Navigation Menu
+    st.subheader("📍 Menu")
     page = st.radio(
         "Select a page",
-        ["Home", "Discovery", "Tasks", "Knowledge Base"]
+        ["🏠 Home", "🧭 Discovery", "⚡ Tasks", "📚 Knowledge Base"]
     )
 
-# Main content
-if page == "Home":
-    st.header("Welcome to S.A.T.O.R.I. AI")
-    st.markdown("""
-    ### Features
-    - 🤖 Multi-Agent Orchestration
-    - ⚡ Task Automation
-    - 🧠 Real-Time Intelligence
-    - 📚 Knowledge Management
-    """)
+# Main content with animations
+if "🏠 Home" in page:
+    st.header("🌟 Welcome to S.A.T.O.R.I. AI")
+    
+    # Feature showcase with progress bar
+    with st.spinner('Loading features...'):
+        time.sleep(0.5)  # Simulate loading
+        st.markdown("""
+        ### ✨ Core Features
+        - 🤖 **Multi-Agent Orchestration**
+          - Dynamic framework powered by LangGraph and LangChain
+        - ⚡ **Task Automation**
+          - Streamline personal and professional workflows
+        - 🧠 **Real-Time Intelligence**
+          - Immediate, actionable insights
+        - 📚 **Knowledge Management**
+          - AI-powered learning and organization
+        """)
 
-    # Check API connection
-    try:
-        response = requests.get(f"http://localhost:{os.getenv('API_PORT', '8000')}")
-        if response.status_code == 200:
-            st.success("Backend API is operational")
-        else:
-            st.error("Backend API is not responding correctly")
-    except requests.exceptions.ConnectionError:
-        st.error("Cannot connect to backend API")
+elif "🧭 Discovery" in page:
+    st.header("🧭 Self-Discovery & Growth")
+    st.info("🚧 Coming soon... We're crafting something special!")
 
-elif page == "Discovery":
-    st.header("Self-Discovery & Growth")
-    st.markdown("Coming soon...")
+elif "⚡ Tasks" in page:
+    st.header("⚡ Task Automation")
+    st.info("🚧 Coming soon... Automation magic in progress!")
 
-elif page == "Tasks":
-    st.header("Task Automation")
-    st.markdown("Coming soon...")
-
-elif page == "Knowledge Base":
-    st.header("Knowledge Management")
-    st.markdown("Coming soon...") 
+elif "📚 Knowledge Base" in page:
+    st.header("📚 Knowledge Management")
+    st.info("🚧 Coming soon... Building your knowledge fortress!") 
