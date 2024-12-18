@@ -6,8 +6,11 @@ Provides common functionality for all specialized agents.
 from typing import List, Dict, Any, Optional
 import logging
 from abc import ABC, abstractmethod
+import requests
 
-from langchain.chat_models import ChatOpenAI
+from langchain.llms import LlamaCpp
+from langchain.callbacks.manager import CallbackManager
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.schema import (
     AIMessage,
     HumanMessage,
@@ -47,12 +50,16 @@ class BaseAgent(ABC):
         self.role = ai_settings.agent_roles[agent_type]
         self.system_prompt = ai_settings.system_prompts[agent_type]
         
-        # Initialize chat model
-        self.llm = ChatOpenAI(
-            model=ai_settings.chat_model,
+        # Initialize Llama model
+        callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
+        
+        self.llm = LlamaCpp(
+            model_path=ai_settings.llama_model,
             temperature=temperature or ai_settings.agent_temperature,
             max_tokens=max_tokens or ai_settings.max_token_limit,
-            openai_api_key=ai_settings.openai_api_key
+            n_ctx=2048,
+            callback_manager=callback_manager,
+            verbose=True
         )
         
         # Initialize embedding manager if provided
@@ -63,7 +70,7 @@ class BaseAgent(ABC):
             SystemMessage(content=self.system_prompt)
         ]
         
-        logger.info(f"Initialized {agent_type} agent")
+        logger.info(f"Initialized {agent_type} agent with Llama model")
     
     def add_message(self, message: str, is_human: bool = True) -> None:
         """
@@ -125,7 +132,7 @@ class BaseAgent(ABC):
     
     async def _generate_response(self, message: str, include_context: bool = True) -> str:
         """
-        Generate a response using the LLM
+        Generate a response using the Llama model
         
         Args:
             message: Input message
@@ -146,8 +153,12 @@ class BaseAgent(ABC):
                 enhanced_message = f"{message}\n{context}"
                 self.conversation_history[-1] = HumanMessage(content=enhanced_message)
             
+            # Format conversation history for Llama
+            formatted_messages = self._format_messages_for_llama()
+            
+            # Generate response using Llama
             response = await self.llm.agenerate(
-                messages=[self.conversation_history]
+                prompts=[formatted_messages]
             )
             
             # Extract and store response
@@ -159,6 +170,18 @@ class BaseAgent(ABC):
         except Exception as e:
             logger.error(f"Error generating response: {str(e)}")
             raise
+    
+    def _format_messages_for_llama(self) -> str:
+        """Format conversation history for Llama model"""
+        formatted_messages = []
+        for msg in self.conversation_history:
+            if isinstance(msg, SystemMessage):
+                formatted_messages.append(f"System: {msg.content}")
+            elif isinstance(msg, HumanMessage):
+                formatted_messages.append(f"Human: {msg.content}")
+            elif isinstance(msg, AIMessage):
+                formatted_messages.append(f"Assistant: {msg.content}")
+        return "\n".join(formatted_messages)
     
     def get_conversation_history(self) -> List[Dict[str, Any]]:
         """

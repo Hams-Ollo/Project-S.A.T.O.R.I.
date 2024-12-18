@@ -7,10 +7,10 @@ from pydantic import BaseSettings, Field
 class AISettings(BaseSettings):
     """AI Component Configuration"""
     
-    # OpenAI Settings
-    openai_api_key: str = Field(..., env='OPENAI_API_KEY')
-    embedding_model: str = Field("text-embedding-ada-002", env='EMBEDDING_MODEL')
-    chat_model: str = Field("gpt-4-1106-preview", env='CHAT_MODEL')
+    # Llama Settings
+    llama_api_url: str = Field("http://localhost:8080", env='LLAMA_API_URL')
+    llama_model: str = Field("llama-3.3-70b-versatile", env='LLAMA_MODEL')
+    embedding_model: str = Field("llama-3.3-70b-versatile", env='EMBEDDING_MODEL')
     
     # ChromaDB Settings
     chroma_db_dir: str = Field("data/chromadb", env='CHROMA_DB_DIR')
@@ -68,10 +68,7 @@ LOGGING_CONFIG = {
 
 # Token limits for different models
 TOKEN_LIMITS = {
-    "gpt-4-1106-preview": 128000,
-    "gpt-4": 8192,
-    "gpt-3.5-turbo-16k": 16384,
-    "gpt-3.5-turbo": 4096
+    "llama-3.3-70b-versatile": 4096,
 }
 
 # Supported document types for ingestion
