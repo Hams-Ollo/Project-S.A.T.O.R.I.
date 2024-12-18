@@ -10,10 +10,18 @@ import os
 import time
 from typing import Callable
 import sys
+import signal
+from contextlib import asynccontextmanager
 
 # Add the parent directory to sys.path to import core modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.logging.logger import create_logger
+
+# Import WebSocket routes
+from routes.websocket import router as websocket_router
+
+# Import WebSocket manager
+from core.websocket.manager import manager
 
 # Initialize logger
 logger = create_logger(
@@ -26,12 +34,54 @@ logger = create_logger(
 load_dotenv()
 logger.info("🔧 Loading environment variables")
 
-# Initialize FastAPI app
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Handle application startup and shutdown events."""
+    try:
+        # Startup
+        logger.info("🚀 Starting S.A.T.O.R.I. AI backend server")
+        
+        # Log environment details
+        env_details = {
+            "Environment": os.getenv("ENVIRONMENT", "development"),
+            "API Version": os.getenv("API_VERSION", "0.1.0"),
+            "Debug Mode": os.getenv("DEBUG", "False"),
+            "Host": os.getenv("API_HOST", "0.0.0.0"),
+            "Port": os.getenv("API_PORT", 8000)
+        }
+        
+        for key, value in env_details.items():
+            logger.info(f"📌 {key}: {value}")
+        
+        logger.info("✨ Server is ready to accept connections")
+        yield
+        
+        # Shutdown
+        logger.info("🔄 Initiating graceful shutdown")
+        await manager.shutdown()
+        logger.info("👋 S.A.T.O.R.I. AI backend server shutdown complete")
+        
+    except Exception as e:
+        logger.error(f"❌ Error during server lifecycle: {str(e)}")
+        raise
+
+# Initialize FastAPI app with lifespan
 app = FastAPI(
     title="S.A.T.O.R.I. AI",
     description="System for Agentic Tasks, Orchestration, and Real-time Intelligence",
-    version="0.1.0"
+    version="0.1.0",
+    lifespan=lifespan
 )
+
+def signal_handler(signum, frame):
+    """Handle system signals for graceful shutdown."""
+    logger.info(f"Received signal {signum}")
+    logger.info("Initiating graceful shutdown...")
+    sys.exit(0)
+
+# Register signal handlers
+signal.signal(signal.SIGINT, signal_handler)  # Handle Ctrl+C
+signal.signal(signal.SIGTERM, signal_handler)  # Handle termination
 
 # Middleware for request logging
 @app.middleware("http")
@@ -68,6 +118,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include WebSocket routes
+app.include_router(websocket_router, prefix="/ws", tags=["websocket"])
+
 @app.get("/")
 async def root():
     """Root endpoint returning API status"""
@@ -75,46 +128,30 @@ async def root():
     return {
         "message": "Welcome to S.A.T.O.R.I. AI",
         "status": "operational",
-        "version": "0.1.0"
+        "version": "0.1.0",
+        "websocket_enabled": True
     }
-
-@app.on_event("startup")
-async def startup_event():
-    """Startup event handler"""
-    logger.info("🚀 Starting S.A.T.O.R.I. AI backend server")
-    
-    # Log environment details
-    env_details = {
-        "Environment": os.getenv("ENVIRONMENT", "development"),
-        "API Version": os.getenv("API_VERSION", "0.1.0"),
-        "Debug Mode": os.getenv("DEBUG", "False"),
-        "Host": os.getenv("API_HOST", "0.0.0.0"),
-        "Port": os.getenv("API_PORT", 8000)
-    }
-    
-    for key, value in env_details.items():
-        logger.info(f"📌 {key}: {value}")
-    
-    logger.info("✨ Server is ready to accept connections")
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Shutdown event handler"""
-    logger.info("🔄 Initiating graceful shutdown")
-    logger.info("👋 S.A.T.O.R.I. AI backend server shutdown complete")
 
 if __name__ == "__main__":
     logger.info(f"🌟 Starting server on {os.getenv('API_HOST', '0.0.0.0')}:{os.getenv('API_PORT', 8000)}")
     
-    # Configure uvicorn logging to use our logger
-    log_config = uvicorn.config.LOGGING_CONFIG
-    log_config["formatters"]["access"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
-    
-    uvicorn.run(
-        "main:app",
-        host=os.getenv("API_HOST", "0.0.0.0"),
-        port=int(os.getenv("API_PORT", 8000)),
-        reload=True,
-        log_level="info",
-        log_config=log_config
-    ) 
+    try:
+        # Configure uvicorn logging to use our logger
+        log_config = uvicorn.config.LOGGING_CONFIG
+        log_config["formatters"]["access"]["fmt"] = "%(asctime)s - %(levelname)s - %(message)s"
+        
+        uvicorn.run(
+            "main:app",
+            host=os.getenv("API_HOST", "0.0.0.0"),
+            port=int(os.getenv("API_PORT", 8000)),
+            reload=True,
+            log_level="info",
+            log_config=log_config
+        )
+    except KeyboardInterrupt:
+        logger.info("Received keyboard interrupt, shutting down...")
+    except Exception as e:
+        logger.error(f"Server error: {str(e)}")
+        raise
+    finally:
+        logger.info("Server shutdown complete") 

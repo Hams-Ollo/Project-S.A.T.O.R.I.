@@ -7,7 +7,7 @@
 # 1. Create a virtual environment -> python -m venv venv
 # 2. Activate the virtual environment -> .\venv\Scripts\Activate
 # 3. Install the requirements -> pip install -r requirements.txt
-# 4. Run the streamlit app -> streamlit run app/frontend/app.py
+# 4. Run the streamlit app -> streamlit run frontend/app.py
 #
 # Git Commands:
 # 1. Initialize repository -> git init
@@ -26,6 +26,12 @@ import requests
 from dotenv import load_dotenv
 import os
 import time
+from components.chat import initialize_chat
+import signal
+import sys
+import atexit
+import logging
+import asyncio
 
 # Load environment variables
 load_dotenv()
@@ -44,6 +50,10 @@ st.markdown("""
     .success-message { color: #28a745; }
     .error-message { color: #dc3545; }
     .info-message { color: #17a2b8; }
+    .chat-message { margin: 1rem 0; padding: 0.5rem; border-radius: 0.5rem; }
+    .user-message { background-color: #e9ecef; text-align: right; }
+    .system-message { background-color: #f8f9fa; }
+    .agent-message { background-color: #e3f2fd; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -63,7 +73,7 @@ with st.sidebar:
     # Check API connection with a progress bar
     with st.spinner('Checking API connection...'):
         try:
-            response = requests.get(f"http://localhost:{os.getenv('API_PORT', '8000')}")
+            response = requests.get(f"http://localhost:{os.getenv('PORT', '8000')}")
             if response.status_code == 200:
                 st.success("⚡ Backend API: Connected")
                 st.info(f"🔄 API Version: {response.json().get('version', 'Unknown')}")
@@ -76,8 +86,35 @@ with st.sidebar:
     st.subheader("📍 Menu")
     page = st.radio(
         "Select a page",
-        ["🏠 Home", "🧭 Discovery", "⚡ Tasks", "📚 Knowledge Base"]
+        ["🏠 Home", "🧭 Chat", "🧭 Discovery", "⚡ Tasks", "📚 Knowledge Base"]
     )
+
+# Global declarations
+global chat_instance
+chat_instance = None
+
+def cleanup():
+    """Clean up resources during shutdown."""
+    global chat_instance
+    logger = logging.getLogger(__name__)
+    logger.info("Cleaning up Streamlit application...")
+    
+    if chat_instance:
+        asyncio.run(chat_instance.disconnect_websocket())
+    
+    logger.info("Streamlit application cleanup complete")
+
+def signal_handler(signum, frame):
+    """Handle system signals."""
+    logger = logging.getLogger(__name__)
+    logger.info(f"Received signal {signum}")
+    cleanup()
+    sys.exit(0)
+
+# Register shutdown handlers
+atexit.register(cleanup)
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
 
 # Main content with animations
 if "🏠 Home" in page:
@@ -97,6 +134,11 @@ if "🏠 Home" in page:
         - 📚 **Knowledge Management**
           - AI-powered learning and organization
         """)
+
+elif "🧭 Chat" in page:
+    if chat_instance is None:
+        chat_instance = initialize_chat()
+    chat_instance.render()
 
 elif "🧭 Discovery" in page:
     st.header("🧭 Self-Discovery & Growth")
