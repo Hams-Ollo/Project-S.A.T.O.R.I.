@@ -1,0 +1,665 @@
+# 🤖 AI Assistant Prompts Guide
+Version: 1.1
+Last Updated: 2024-12-20
+
+## 📋 Table of Contents
+1. Guide Usage Instructions
+2. Project Context Setup
+3. Initial Project Analysis
+4. Code Review Prompts
+5. Documentation Enhancement Prompts
+6. Work Notes Generation
+7. Git Log Analysis
+8. Technical Documentation Creation
+9. Follow-up Review Prompts
+10. Project-Specific Adaptations
+11. Multi-Project Management
+12. System Visualization and Diagramming
+
+## 💡 1. Guide Usage Instructions
+
+### 1.1 How to Use This Guide
+This guide is designed to be technology-agnostic and adaptable to any software project. When using these prompts:
+1. Replace [PROJECT_NAME] with your specific project name
+2. Adjust technology-specific terms as needed
+3. Modify focus areas based on project type
+4. Scale depth of analysis based on project size
+5. Customize documentation requirements per project needs
+
+### 1.2 Output and Logging Guidelines
+For all prompts and analyses:
+1. Save all results in the project root folder as `[descriptive_name]_[PROJECT_NAME].txt`
+2. Use contextual emojis at the start of each section for quick visual navigation
+3. Include timestamps and version information in all output files
+4. Structure content with clear hierarchical headings
+5. Add a table of contents for files longer than 3 sections
+6. Use consistent emoji patterns across all documentation:
+   - 🎯 Goals/Objectives
+   - ⚠️ Warnings/Issues
+   - ✅ Completed Items
+   - 🔄 In Progress
+   - 📊 Metrics/Statistics
+   - 🔒 Security Items
+   - 💡 Recommendations
+   - 🚀 Improvements
+   - 🐛 Bugs/Issues
+   - 📝 Notes/Documentation
+   - ⚙️ Configuration
+   - 🔍 Analysis Results
+
+### 1.3 Multi-Project Management
+For managing multiple projects simultaneously:
+1. Maintain separate context threads per project
+2. Use project-specific prefixes in file names
+3. Track progress separately for each project
+4. Adapt prompts based on project technology stack
+5. Scale analysis depth based on project complexity
+
+## 🎯 2. Project Context Setup
+
+Before beginning analysis, provide the following context:
+
+```markdown
+Project Name: [PROJECT_NAME]
+Primary Technology Stack: [TECHNOLOGIES]
+Project Type: [TYPE (e.g., Web App, API, Mobile App)]
+Current Version: [VERSION]
+Development Stage: [STAGE]
+Key Requirements:
+- [REQUIREMENT_1]
+- [REQUIREMENT_2]
+Special Considerations:
+- [CONSIDERATION_1]
+- [CONSIDERATION_2]
+```
+
+Save this context as `project_context_[PROJECT_NAME].txt` in the root folder.
+
+## 🔍 3. Initial Project Analysis Prompt
+
+Please perform a comprehensive analysis of [PROJECT_NAME]. Focus on:
+1. Overall architecture and structure
+2. Main components and their interactions
+3. Key dependencies and technologies used
+4. Current version and status
+5. Existing documentation quality
+6. Project-specific patterns and practices
+7. Integration points and external dependencies
+8. Development workflow and processes
+
+Generate a detailed report including:
+- Project overview and context
+- Technology stack analysis
+- Key components and their roles
+- Areas needing attention (prioritized)
+- Initial recommendations (categorized)
+- Risk assessment
+- Quick wins identified
+- Long-term improvement suggestions
+
+Save the analysis report as `initial_analysis_[PROJECT_NAME].txt` in the root folder, using contextual emojis for each section:
+- 📋 Project Overview
+- 🔧 Technology Stack
+- 🧩 Components
+- ⚠️ Areas Needing Attention
+- 💡 Recommendations
+- ⚖️ Risk Assessment
+- 🎯 Quick Wins
+- 🚀 Long-term Improvements
+
+## 🔬 4. Code Review Prompts
+
+### 4.1 Initial Code Review
+Please conduct a thorough code review of [PROJECT_NAME]. Focus on:
+1. Code quality and standards
+2. Security practices
+3. Performance optimizations
+4. Error handling
+5. API design
+6. Testing coverage
+7. Project-specific patterns
+8. Technology-specific best practices
+9. Cross-cutting concerns
+10. Technical debt indicators
+
+Generate a comprehensive code_review_[PROJECT_NAME].txt file that includes:
+- Detailed findings by category
+- Severity levels for issues
+- Specific recommendations
+- Code examples for improvements
+- Best practice violations
+- Security concerns
+- Performance bottlenecks
+- Technical debt assessment
+- Improvement roadmap
+- Priority matrix
+
+Save the code review results as `code_review_[PROJECT_NAME].txt` in the root folder, using these emojis for categorization:
+- 📊 Overview
+- 🔍 Detailed Findings
+- ⚠️ Issues by Severity
+- 💡 Recommendations
+- 🎯 Code Examples
+- ⚡ Performance Issues
+- 🔒 Security Concerns
+- 📈 Technical Debt
+- 🚀 Improvement Plan
+- ⚖️ Priority Matrix
+
+### 4.2 Work Notes Generation
+Based on the code review, please generate a detailed work_notes_[PROJECT_NAME].txt file containing:
+1. Current project status
+2. Recent changes and updates
+3. Ongoing development efforts
+4. Known issues and challenges
+5. Planned improvements
+6. Technical debt items
+7. Dependencies and version information
+8. Environment-specific notes
+9. Integration points status
+10. Performance metrics
+11. Security considerations
+12. Resource utilization
+
+### 4.3 Git Log Analysis
+Please analyze the git history and generate a git_log_[PROJECT_NAME].txt file including:
+1. Recent significant changes
+2. Major feature additions
+3. Bug fixes
+4. Refactoring efforts
+5. Documentation updates
+6. Version releases
+7. Pattern analysis of development workflow
+8. Team contribution patterns
+9. Release frequency analysis
+10. Code churn metrics
+11. Branch strategy effectiveness
+12. Integration frequency
+
+## 📚 5. Documentation Enhancement Prompts
+
+### 5.1 Documentation Audit
+Please perform a comprehensive audit of [PROJECT_NAME]'s technical documentation:
+1. Review existing documentation in /docs
+2. Identify gaps and outdated information
+3. Assess completeness and accuracy
+4. Check consistency across documents
+5. Verify API documentation
+6. Review code comments and inline documentation
+7. Evaluate README.md quality
+8. Analyze documentation accessibility
+9. Check for technology-specific requirements
+10. Verify integration documentation
+11. Review security documentation
+12. Assess deployment guides
+
+### 5.2 Documentation Creation/Enhancement
+Please create or enhance the following documentation using industry best practices and contextual emojis:
+
+1. 📘 README.md:
+- Project overview and context
+- Installation instructions (environment-specific)
+- Configuration details
+- Usage examples
+- Contributing guidelines
+- License information
+- Support contacts
+- Quick start guide
+- Troubleshooting section
+- FAQ section
+
+2. 📖 ARCHITECTURE.md:
+- System architecture
+- Component interactions
+- Data flow diagrams
+- Technology stack details
+- Design patterns used
+- Scaling considerations
+- Security architecture
+
+3. 🛠️ DEVELOPMENT.md:
+- Development environment setup
+- Coding standards
+- Build processes
+- Testing procedures
+- Debugging guidelines
+- Performance optimization
+- Best practices
+
+4. 🚀 DEPLOYMENT.md:
+- Deployment prerequisites
+- Environment setup
+- Configuration management
+- Deployment procedures
+- Monitoring setup
+- Backup procedures
+- Troubleshooting guides
+
+5. 📝 API_DOCUMENTATION.md:
+- API overview
+- Authentication methods
+- Endpoint documentation
+- Request/response examples
+- Error handling
+- Rate limiting
+- API versioning
+
+6. 🔒 SECURITY.md:
+- Security policies
+- Authentication details
+- Authorization flows
+- Data protection
+- Security best practices
+- Incident response
+- Compliance requirements
+
+7. 📊 MONITORING.md:
+- Monitoring setup
+- Key metrics
+- Alerting configuration
+- Log management
+- Performance monitoring
+- Health checks
+- Incident response
+
+8. 🧪 TESTING.md:
+- Testing strategy
+- Test coverage requirements
+- Unit testing guidelines
+- Integration testing
+- Performance testing
+- Security testing
+- CI/CD integration
+
+### 5.3 Project-Specific Documentation
+Based on [PROJECT_NAME]'s technology stack, create or enhance:
+
+1. 🔧 Technology-Specific Guides:
+- Framework-specific setup
+- Language-specific patterns
+- Platform-specific considerations
+- Tool-specific configurations
+- Environment setup guides
+
+2. 🔌 Integration Documentation:
+- Third-party integrations
+- API integrations
+- Database interactions
+- External services
+- Authentication systems
+
+3. 📊 Metrics and Monitoring:
+- Project-specific KPIs
+- Performance benchmarks
+- Resource utilization
+- Error tracking
+- User analytics
+
+### 5.4 Documentation Audit Results
+Save the audit results as `documentation_audit_[PROJECT_NAME].txt` in the root folder, using these emojis:
+- 📋 Audit Overview
+- 🔍 Gap Analysis
+- ✅ Complete Items
+- ⚠️ Missing Items
+- 💡 Recommendations
+- 🚀 Next Steps
+
+## 🔄 6. Follow-up Review Prompts
+
+### 6.1 Documentation Review
+Please review the enhanced documentation for [PROJECT_NAME], checking:
+1. Consistency across documents
+2. Completeness of information
+3. Technical accuracy
+4. Clarity and readability
+5. Proper formatting
+6. Working links
+7. Updated version information
+8. Technology-specific accuracy
+9. Integration details
+10. Environment-specific guidance
+
+### 6.2 Final Validation
+Please perform a final validation of [PROJECT_NAME]'s:
+1. All documentation files
+2. Code review findings
+3. Work notes accuracy
+4. Git log analysis
+5. Implementation recommendations
+6. Security considerations
+7. Best practice compliance
+8. Technology-specific standards
+9. Integration completeness
+10. Performance benchmarks
+
+## 📋 7. Progress Tracking
+
+Please maintain a progress_tracking_[PROJECT_NAME].txt file that includes:
+1. Completed review items
+2. Documentation updates
+3. Pending tasks
+4. Blockers or issues
+5. Next steps
+6. Timeline estimates
+7. Resource requirements
+8. Dependencies
+9. Risk factors
+10. Quality metrics
+
+## 🎯 8. Project-Specific Adaptations
+
+### 8.1 Technology Stack Adaptations
+Adjust these prompts based on:
+1. Primary programming languages
+2. Frameworks used
+3. Database technologies
+4. Cloud services
+5. Development tools
+6. Testing frameworks
+7. Deployment platforms
+8. Integration requirements
+
+### 8.2 Project Type Adaptations
+Modify focus areas for:
+1. Web Applications
+2. Mobile Applications
+3. APIs/Microservices
+4. Desktop Applications
+5. Enterprise Systems
+6. Data Processing Systems
+7. IoT Applications
+8. AI/ML Systems
+
+## 🔍 9. Review Criteria
+
+Ensure all outputs meet these criteria:
+1. Comprehensive coverage
+2. Technical accuracy
+3. Clear organization
+4. Practical recommendations
+5. Security consciousness
+6. Industry best practices
+7. Maintainable structure
+8. Consistent formatting
+9. Proper emoji usage
+10. Version control ready
+11. Project-specific relevance
+12. Technology stack alignment
+
+## 🚀 10. Multi-Project Management Tips
+
+1. Project Isolation:
+- Maintain separate conversation threads
+- Use project-specific file naming
+- Track progress independently
+- Document context switches
+
+2. Context Management:
+- Document project-specific details
+- Track technology stacks separately
+- Maintain separate timelines
+- Note project interdependencies
+
+3. Resource Optimization:
+- Prioritize across projects
+- Identify common patterns
+- Share best practices
+- Leverage reusable components
+
+4. Quality Assurance:
+- Consistent standards across projects
+- Project-specific quality metrics
+- Cross-project learning
+- Unified best practices
+
+## 📝 11. Documentation Standards
+
+### 11.1 File Naming Convention
+All output files should follow this naming pattern:
+- `[descriptive_name]_[PROJECT_NAME].txt`
+Examples:
+- `initial_analysis_myproject.txt`
+- `code_review_myproject.txt`
+- `security_audit_myproject.txt`
+- `performance_metrics_myproject.txt`
+
+### 11.2 Emoji Usage Guidelines
+1. Section Headers:
+   - 📋 For overviews and summaries
+   - 🎯 For objectives and goals
+   - 🔍 For analysis sections
+   - ⚠️ For warnings and issues
+   - 💡 For recommendations
+   - 🚀 For improvements and next steps
+
+2. Status Indicators:
+   - ✅ Complete
+   - 🔄 In Progress
+   - ⏳ Pending
+   - ❌ Blocked/Issues
+
+3. Technical Categories:
+   - 🔒 Security
+   - ⚡ Performance
+   - 🧪 Testing
+   - 📊 Metrics
+   - 🔧 Configuration
+   - 🔌 Integration
+
+4. Documentation Types:
+   - 📘 README
+   - 📖 Architecture
+   - 🛠️ Development
+   - 🚀 Deployment
+   - 📝 API
+   - 🔒 Security
+
+### 11.3 File Structure Template
+Each output file should follow this structure:
+```markdown
+# 📋 [Title]
+Version: [X.X]
+Generated: [Timestamp]
+Project: [PROJECT_NAME]
+
+## 📑 Table of Contents
+1. [Section 1]
+2. [Section 2]
+...
+
+## 🎯 Purpose
+[Brief description of the file's purpose]
+
+## 📊 Content Sections
+[Main content with appropriate emojis]
+
+## 🚀 Next Steps
+[Action items or recommendations]
+
+## 📝 Notes
+[Additional information or context]
+```
+
+## 📊 12. System Visualization and Diagramming
+
+### 12.1 Codebase Architecture Visualization
+Please analyze the codebase and generate comprehensive Mermaid diagrams saved as `system_architecture_[PROJECT_NAME].txt`. Include:
+
+1. 🏗️ High-Level System Architecture:
+```mermaid
+graph TD
+    %% System-level components and their relationships
+    %% Include main services, databases, external integrations
+    %% Show data flow between components
+```
+
+2. 📦 Module Dependencies:
+```mermaid
+graph LR
+    %% Module-level dependencies
+    %% Include internal packages and external dependencies
+    %% Show import relationships
+```
+
+3. 🔄 Process Flows:
+```mermaid
+sequenceDiagram
+    %% Key business processes
+    %% Include API calls, service interactions
+    %% Show request/response patterns
+```
+
+4. 📈 State Diagrams:
+```mermaid
+stateDiagram-v2
+    %% Application states
+    %% Include state transitions
+    %% Show error handling paths
+```
+
+5. 🎯 Use Case Flows:
+```mermaid
+graph TD
+    %% Main user interactions
+    %% Include user journey paths
+    %% Show decision points
+```
+
+### 12.2 Database Schema Visualization
+Generate database schema diagrams as `database_schema_[PROJECT_NAME].txt`:
+
+```mermaid
+erDiagram
+    %% Entity relationships
+    %% Include table structures
+    %% Show relationships and cardinality
+```
+
+### 12.3 Component Interaction Diagrams
+Create detailed component interaction diagrams as `component_interactions_[PROJECT_NAME].txt`:
+
+```mermaid
+graph TD
+    %% Component-level interactions
+    %% Include service boundaries
+    %% Show communication patterns
+```
+
+### 12.4 Infrastructure Architecture
+Generate infrastructure diagrams as `infrastructure_[PROJECT_NAME].txt`:
+
+```mermaid
+graph TD
+    %% Cloud/infrastructure components
+    %% Include deployment environments
+    %% Show scaling patterns
+```
+
+### 12.5 Security Flow Diagrams
+Create security flow diagrams as `security_flows_[PROJECT_NAME].txt`:
+
+```mermaid
+sequenceDiagram
+    %% Authentication flows
+    %% Include authorization checks
+    %% Show security boundaries
+```
+
+### 12.6 Diagram Generation Guidelines
+When generating diagrams:
+1. Start with high-level overview
+2. Break down into logical components
+3. Use consistent naming conventions
+4. Include clear relationships
+5. Add descriptive labels
+6. Use color coding for different types:
+   - 🟦 Core Components
+   - 🟨 External Services
+   - 🟩 Databases
+   - 🟥 Security Boundaries
+   - 🟪 User Interfaces
+7. Include legends for complex diagrams
+8. Add timing information for sequence diagrams
+9. Note scalability points
+10. Highlight critical paths
+
+### 12.7 Diagram Categories and Usage
+
+1. System Architecture:
+- Overall system design
+- Component relationships
+- Technology stack visualization
+- Integration points
+- Data flow patterns
+
+2. Process Flows:
+- User journeys
+- Business logic flows
+- Error handling paths
+- Integration sequences
+- Authentication flows
+
+3. Data Models:
+- Database schemas
+- Entity relationships
+- Data flow patterns
+- Storage structures
+- Cache hierarchies
+
+4. Deployment Architecture:
+- Infrastructure layout
+- Network topology
+- Security zones
+- Scaling patterns
+- Failover designs
+
+### 12.8 Visualization Best Practices
+
+1. Clarity:
+- Use clear, descriptive labels
+- Maintain consistent spacing
+- Group related components
+- Show clear directional flow
+- Include brief descriptions
+
+2. Organization:
+- Logical grouping of components
+- Clear hierarchy of systems
+- Consistent layout patterns
+- Easy-to-follow relationships
+- Proper use of subgraphs
+
+3. Detail Level:
+- Start with high-level overview
+- Provide drill-down diagrams
+- Include relevant metadata
+- Show version information
+- Note dependencies
+
+4. Documentation:
+- Link diagrams to documentation
+- Include setup instructions
+- Note configuration requirements
+- Reference related diagrams
+- Maintain version history
+
+### 12.9 Diagram Output Format
+Save all diagrams in both Mermaid format and rendered images:
+1. `[diagram_type]_mermaid_[PROJECT_NAME].txt` - Mermaid source
+2. `[diagram_type]_rendered_[PROJECT_NAME].png` - Rendered image
+3. Include timestamp and version in each file
+4. Add brief description of diagram purpose
+5. Note any specific viewing requirements
+
+### 12.10 Diagram Update Guidelines
+When updating diagrams:
+1. Maintain version history
+2. Document significant changes
+3. Update related documentation
+4. Verify diagram accuracy
+5. Validate relationships
+6. Update timestamps
+7. Review for completeness
+8. Check consistency with codebase
+9. Update legends as needed
+10. Verify rendering in different tools

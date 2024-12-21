@@ -7,88 +7,62 @@ from datetime import datetime
 import logging
 from typing import Optional, Dict, Any
 import atexit
-import signal
-import sys
 
 logger = logging.getLogger(__name__)
 
 class ChatInterface:
     def __init__(self):
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
-        if "user_id" not in st.session_state:
-            st.session_state.user_id = str(uuid.uuid4())
-        if "websocket" not in st.session_state:
-            st.session_state.websocket = None
-        if "connected" not in st.session_state:
-            st.session_state.connected = False
+        self.websocket = None
+        self.messages = []
+        self.is_connected = False
+        self.should_run = True
         
-        # Register shutdown handlers
-        atexit.register(self._cleanup)
-        signal.signal(signal.SIGINT, self._signal_handler)
-        signal.signal(signal.SIGTERM, self._signal_handler)
-    
-    def _signal_handler(self, signum, frame):
-        """Handle system signals."""
-        logger.info(f"Received signal {signum}")
-        self._cleanup()
-        sys.exit(0)
-    
-    def _cleanup(self):
-        """Clean up resources during shutdown."""
-        logger.info("Cleaning up chat interface...")
-        if st.session_state.websocket:
-            asyncio.run(self.disconnect_websocket())
-        logger.info("Chat interface cleanup complete")
+        # Initialize session state for messages if not exists
+        if 'messages' not in st.session_state:
+            st.session_state.messages = []
+            
+        # Initialize the WebSocket connection
+        asyncio.run(self.connect_websocket())
 
     async def connect_websocket(self):
         """Establish WebSocket connection."""
-        if not st.session_state.connected:
-            try:
-                uri = f"ws://localhost:8000/ws/ws?user_id={st.session_state.user_id}"
-                st.session_state.websocket = await websockets.connect(uri)
-                st.session_state.connected = True
-                # Start listening for messages
-                self._message_listener = asyncio.create_task(self._listen_for_messages())
-                logger.info(f"WebSocket connected for user {st.session_state.user_id}")
-            except Exception as e:
-                logger.error(f"WebSocket connection failed: {str(e)}")
-                st.error("Failed to connect to chat server. Please try again.")
+        try:
+            self.websocket = await websockets.connect(
+                f"ws://localhost:8000/ws/chat",
+                ping_interval=None
+            )
+            self.is_connected = True
+            logger.info("WebSocket connection established")
+        except Exception as e:
+            logger.error(f"Failed to connect to WebSocket: {str(e)}")
+            self.is_connected = False
 
     async def disconnect_websocket(self):
         """Close WebSocket connection."""
-        if st.session_state.websocket:
+        if self.websocket:
             try:
-                # Cancel message listener
-                if hasattr(self, '_message_listener'):
-                    self._message_listener.cancel()
-                    try:
-                        await self._message_listener
-                    except asyncio.CancelledError:
-                        pass
-                
                 # Close WebSocket connection
-                await st.session_state.websocket.close()
+                await self.websocket.close()
                 logger.info(f"WebSocket disconnected for user {st.session_state.user_id}")
             except Exception as e:
                 logger.error(f"Error during WebSocket disconnect: {str(e)}")
             finally:
-                st.session_state.connected = False
-                st.session_state.websocket = None
+                self.is_connected = False
+                self.websocket = None
 
     async def send_message(self, content: str, reply_to: Optional[str] = None):
         """Send a message through WebSocket."""
-        if not st.session_state.connected:
+        if not self.is_connected:
             await self.connect_websocket()
 
-        if st.session_state.websocket:
+        if self.websocket:
             try:
                 message = {
                     "content": content,
                     "reply_to": reply_to,
                     "timestamp": datetime.utcnow().isoformat()
                 }
-                await st.session_state.websocket.send(json.dumps(message))
+                await self.websocket.send(json.dumps(message))
                 logger.debug(f"Message sent: {content}")
             except Exception as e:
                 logger.error(f"Failed to send message: {str(e)}")
@@ -97,12 +71,12 @@ class ChatInterface:
 
     async def _listen_for_messages(self):
         """Listen for incoming WebSocket messages."""
-        if not st.session_state.websocket:
+        if not self.websocket:
             return
 
         try:
-            while True:
-                message = await st.session_state.websocket.recv()
+            while self.should_run:
+                message = await self.websocket.recv()
                 message_data = json.loads(message)
                 
                 # Handle heartbeat messages silently

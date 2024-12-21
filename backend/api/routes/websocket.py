@@ -3,9 +3,14 @@ from typing import Optional
 import logging
 import json
 from uuid import uuid4
+import sys
+import os
 
-from ...core.websocket.manager import manager
-from ...core.websocket.models import ChatMessage, SystemMessage, MessageType, MessageStatus
+# Add the backend directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from core.websocket.manager import manager
+from core.websocket.models import ChatMessage, SystemMessage, MessageType, MessageStatus
 
 router = APIRouter()
 logger = logging.getLogger(__name__)

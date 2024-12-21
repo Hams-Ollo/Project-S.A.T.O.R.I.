@@ -1,0 +1,69 @@
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#2D3748',
+    'primaryTextColor': '#fff',
+    'primaryBorderColor': '#2D3748',
+    'lineColor': '#64748B',
+    'secondaryColor': '#38B2AC',
+    'tertiaryColor': '#4FD1C5'
+  }
+}}%%
+
+graph TD
+    classDef primary fill:#2D3748,stroke:#2D3748,stroke-width:2px,color:#fff
+    classDef secondary fill:#38B2AC,stroke:#38B2AC,stroke-width:2px,color:#fff
+    classDef tertiary fill:#4FD1C5,stroke:#4FD1C5,stroke-width:2px,color:#fff
+    classDef output fill:#E2E8F0,stroke:#CBD5E0,stroke-width:2px,color:#2D3748
+
+    A[User Interaction]:::primary -->|Upload Blueprint/File| B[Blueprint & Diagram Analyzer]
+    A -->|Ask Query/Request| C[Knowledge Management & Query]
+    A -->|Generate Documentation| D[Documentation & Reporting]
+    A -->|Manage Tasks| E[Workflow Automation & Task Manager]
+    A -->|Send/Respond Emails| F[Communication & Collaboration]
+    A -->|Check Compliance| G[Compliance & Standards Checker]
+    
+    subgraph Multi-Agent System
+        B:::secondary
+        C:::secondary
+        D:::secondary
+        E:::secondary
+        F:::secondary
+        G:::secondary
+    end
+
+    B -->|Extract Details| H[Technical Data Extraction]:::tertiary
+    B -->|Analyze for Concerns| I[Structural Analysis]:::tertiary
+    H & I --> J[Blueprint Insights & Reports]:::output
+
+    subgraph Core Integrations
+        K[Custom Knowledge Base]:::tertiary
+        V[Regulatory Database]:::tertiary
+    end
+
+    C -->|Search Vector Database| K
+    K -->|Return Insights| L[Relevant Project Data]:::output
+
+    D -->|Input Processed Data| M[Report Generation]:::tertiary
+    D -->|Create Presentations| N[Client-Ready Summaries]:::tertiary
+    M & N --> O[Generated Documents]:::output
+
+    E -->|Integrate Calendar| P[Task Scheduler]:::tertiary
+    E -->|Track Progress| Q[Task Tracker]:::tertiary
+    P & Q --> R[Timeline Updates]:::output
+
+    F -->|Summarize Emails| S[Email Draft Generator]:::tertiary
+    F -->|Send Follow-Ups| T[Automated Communication]:::tertiary
+    S & T --> U[Email Responses]:::output
+
+    G -->|Analyze Compliance| V
+    V -->|Generate Suggestions| W[Compliance Recommendations]:::output
+
+    subgraph Outputs
+        J
+        L
+        O
+        R
+        U
+        W
+    end

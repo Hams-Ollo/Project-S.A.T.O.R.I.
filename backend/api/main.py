@@ -13,15 +13,14 @@ import sys
 import signal
 from contextlib import asynccontextmanager
 
-# Add the parent directory to sys.path to import core modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add the backend directory to the Python path
+backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(backend_dir)
+
 from core.logging.logger import create_logger
-
-# Import WebSocket routes
-from routes.websocket import router as websocket_router
-
-# Import WebSocket manager
 from core.websocket.manager import manager
+from api.routes.websocket import router as websocket_router
+from api.routes.voice import router as voice_router
 
 # Initialize logger
 logger = create_logger(
@@ -120,6 +119,9 @@ app.add_middleware(
 
 # Include WebSocket routes
 app.include_router(websocket_router, prefix="/ws", tags=["websocket"])
+
+# Include Voice routes
+app.include_router(voice_router, prefix="/voice", tags=["voice"])
 
 @app.get("/")
 async def root():

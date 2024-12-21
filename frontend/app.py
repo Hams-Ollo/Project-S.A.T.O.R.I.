@@ -104,17 +104,8 @@ def cleanup():
     
     logger.info("Streamlit application cleanup complete")
 
-def signal_handler(signum, frame):
-    """Handle system signals."""
-    logger = logging.getLogger(__name__)
-    logger.info(f"Received signal {signum}")
-    cleanup()
-    sys.exit(0)
-
 # Register shutdown handlers
 atexit.register(cleanup)
-signal.signal(signal.SIGINT, signal_handler)
-signal.signal(signal.SIGTERM, signal_handler)
 
 # Main content with animations
 if "🏠 Home" in page:

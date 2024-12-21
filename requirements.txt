@@ -160,3 +160,5 @@ yarl==1.18.3
 zipp==3.21.0
 networkx==3.2.1
 neo4j==5.18.0
+elevenlabs==0.2.24
+aiofiles==23.2.1
