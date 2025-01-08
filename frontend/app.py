@@ -73,7 +73,7 @@ with st.sidebar:
     # Check API connection with a progress bar
     with st.spinner('Checking API connection...'):
         try:
-            response = requests.get(f"http://localhost:{os.getenv('PORT', '8000')}")
+            response = requests.get("http://localhost:8000")
             if response.status_code == 200:
                 st.success("⚡ Backend API: Connected")
                 st.info(f"🔄 API Version: {response.json().get('version', 'Unknown')}")

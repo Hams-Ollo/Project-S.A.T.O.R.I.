@@ -5,15 +5,12 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109.2-teal.svg?style=for-the-badge)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.41.1-red.svg?style=for-the-badge)
 ![ElevenLabs](https://img.shields.io/badge/ElevenLabs-0.2.24-purple.svg?style=for-the-badge)
+![Deepgram](https://img.shields.io/badge/Deepgram-2.0.0-blue.svg?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-red.svg?style=for-the-badge)
 
 **Awaken Intelligence. Automate Workflows. Empower Creation.**
 
 *An advanced multi-agent AI platform for transformative personal and professional growth.*
-
-[Getting Started](#-getting-started) • [Features](#-features) • [Architecture](#-architecture) • [Documentation](#-documentation) • [Development](#-development)
-
----
 
 ## 🌟 Overview
 
@@ -25,7 +22,7 @@ S.A.T.O.R.I. AI (System for Agentic Tasks, Orchestration, and Real-time Intellig
 - **Workflow Mastery**: Optimize and automate your professional processes
 - **Knowledge Synthesis**: Transform information into actionable insights
 - **Strategic Vision**: Develop clear pathways to achieve your goals
-- **Voice Interaction**: Natural voice communication with customizable voices
+- **Voice Interaction**: Natural two-way voice communication with AI agents
 
 ## 🚀 Features
 
@@ -37,16 +34,31 @@ S.A.T.O.R.I. AI (System for Agentic Tasks, Orchestration, and Real-time Intellig
   - ⚡ **Task Agent**: Workflow optimization and automation
   - 📚 **Knowledge Agent**: Information management and retrieval
   - 🎯 **Mentor Agent**: Strategic guidance and planning
+  - 🎤 **Voice Agent**: Natural voice interactions and processing
 
 ### 🔄 Voice Capabilities
 
-- Text-to-speech synthesis using Eleven Labs
-- Multiple voice options with customizable parameters:
-  - Voice stability and clarity control
+- Bidirectional voice communication:
+  - Real-time speech-to-text using Deepgram
+  - Text-to-speech synthesis using Eleven Labs
+- Multiple voice interaction modes:
+  - Live voice conversations
+  - Voice note messaging
+  - Voice command processing
+- Advanced voice features:
+  - Real-time transcription
+  - Multiple language support
+  - Voice activity detection
+  - Smart punctuation and formatting
+- Voice customization:
+  - Multiple voice options
+  - Stability and clarity control
   - Style and emotion adjustment
-  - Speaker boost for enhanced quality
-- Voice settings persistence
-- Audio download and sharing options
+  - Speaker boost enhancement
+- Audio management:
+  - Voice recording and playback
+  - Audio file processing
+  - Download and sharing options
 
 ### 🔄 Intelligent Processing
 
@@ -79,7 +91,10 @@ S.A.T.O.R.I. AI (System for Agentic Tasks, Orchestration, and Real-time Intellig
 - **Frontend**: Streamlit (POC phase)
 - **Database**: ChromaDB, PostgreSQL with pgvector
 - **AI Models**: OpenAI GPT-4, Ada Embeddings
-- **Voice**: Eleven Labs API
+- **Voice**:
+  - Speech-to-Text: Deepgram Nova-2
+  - Text-to-Speech: Eleven Labs
+  - Audio Processing: PyAudio
 
 ### System Components
 

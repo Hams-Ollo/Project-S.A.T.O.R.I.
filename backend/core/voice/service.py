@@ -3,7 +3,7 @@ Voice synthesis service using Eleven Labs API.
 """
 import os
 from typing import Optional, Dict, List
-import requests
+import aiohttp
 import logging
 from pathlib import Path
 
@@ -31,12 +31,14 @@ class VoiceService:
     async def list_voices(self) -> List[Dict]:
         """Get available voices from Eleven Labs."""
         try:
-            response = requests.get(
-                f"{self.base_url}/voices",
-                headers=self.headers
-            )
-            response.raise_for_status()
-            return response.json()["voices"]
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    f"{self.base_url}/voices",
+                    headers=self.headers
+                ) as response:
+                    response.raise_for_status()
+                    data = await response.json()
+                    return data["voices"]
         except Exception as e:
             logger.error(f"Error fetching voices: {str(e)}")
             raise
@@ -82,10 +84,10 @@ class VoiceService:
                 }
             }
 
-            response = requests.post(url, headers=self.headers, json=payload)
-            response.raise_for_status()
-            
-            return response.content
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url, headers=self.headers, json=payload) as response:
+                    response.raise_for_status()
+                    return await response.read()
             
         except Exception as e:
             logger.error(f"Error in text-to-speech conversion: {str(e)}")
@@ -104,8 +106,9 @@ class VoiceService:
         """
         try:
             filepath = self.output_dir / filename
-            with open(filepath, "wb") as f:
-                f.write(audio_data)
+            async with aiohttp.ClientSession() as session:
+                with open(filepath, "wb") as f:
+                    f.write(audio_data)
             return str(filepath)
         except Exception as e:
             logger.error(f"Error saving audio file: {str(e)}")

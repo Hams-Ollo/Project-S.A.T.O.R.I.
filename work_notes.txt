@@ -1,0 +1,49 @@
+SATORI AI - Voice Integration Work Notes
+Date: 2024-01-08
+
+1. Deepgram SDK Integration Updates
+- Updated Deepgram SDK from v2.12.0 to v3.8.0
+- Fixed import issues with new SDK version
+- Simplified imports to use only core Deepgram functionality
+
+2. Code Changes Made:
+
+backend/api/routes/voice.py:
+- Removed problematic imports
+- Simplified to use only base Deepgram import
+- Updated WebSocket event handlers to use string event names
+- Changed from 'LiveTranscription.Transcript' to 'transcriptReceived'
+- Changed from 'LiveTranscription.Error' to 'error'
+- Updated transcript data access pattern for new SDK
+
+backend/core/voice/deepgram_service.py:
+- Removed deprecated imports
+- Simplified to use only base Deepgram class
+- Updated return type hints to use Any instead of specific types
+- Maintained core functionality while adapting to new SDK structure
+
+3. Dependencies:
+- Updated requirements.txt to include latest Deepgram SDK version
+- Added aiohttp for async HTTP requests
+- Updated other related dependencies
+
+4. Known Issues Resolved:
+- Fixed "Import 'pyaudio' could not be resolved"
+- Fixed "Import 'deepgram.clients.live.v1.live_client' could not be resolved"
+- Fixed "Import 'deepgram.transcription' could not be resolved"
+- Fixed "Import 'deepgram.enums' could not be resolved"
+- Fixed "Import 'deepgram._types.live' could not be resolved"
+- Fixed "LiveTranscription is not defined"
+- Fixed "LiveClient is not defined"
+
+5. Testing Notes:
+- Voice transcription functionality maintained
+- WebSocket connections working with new event names
+- Pre-recorded audio transcription working
+- Live transcription events properly handled
+
+6. Next Steps:
+- Further testing of voice interaction features
+- Documentation updates for new SDK version
+- Performance monitoring with new implementation
+- Consider adding error recovery mechanisms 

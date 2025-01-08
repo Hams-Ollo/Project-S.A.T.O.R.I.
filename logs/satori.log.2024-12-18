@@ -1,0 +1,375 @@
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:17:39] INFO     [main.<module>] 🌟 Starting server on 0.0.0.0:8000
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:17:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:17:39] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:17:39] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:17:39] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:17:39] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:17:39] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:18:51] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:18:51] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:18:51] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:18:51] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:18:51] INFO     [main.log_requests] ✨ GET / completed in 1.51ms (Status: 200)
+[2024-12-18 13:18:51] INFO     [main.log_requests] ✨ GET / completed in 1.51ms (Status: 200)
+[2024-12-18 13:18:59] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:18:59] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:18:59] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:18:59] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:18:59] INFO     [main.log_requests] ✨ GET / completed in 1.08ms (Status: 200)
+[2024-12-18 13:18:59] INFO     [main.log_requests] ✨ GET / completed in 1.08ms (Status: 200)
+[2024-12-18 13:19:01] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:01] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:01] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:01] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:01] INFO     [main.log_requests] ✨ GET / completed in 1.55ms (Status: 200)
+[2024-12-18 13:19:01] INFO     [main.log_requests] ✨ GET / completed in 1.55ms (Status: 200)
+[2024-12-18 13:19:06] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:06] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:06] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:06] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:06] INFO     [main.log_requests] ✨ GET / completed in 1.10ms (Status: 200)
+[2024-12-18 13:19:06] INFO     [main.log_requests] ✨ GET / completed in 1.10ms (Status: 200)
+[2024-12-18 13:19:20] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:20] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:20] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:20] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:20] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 13:19:20] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 13:19:25] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:25] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:25] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:25] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:25] INFO     [main.log_requests] ✨ GET / completed in 1.51ms (Status: 200)
+[2024-12-18 13:19:25] INFO     [main.log_requests] ✨ GET / completed in 1.51ms (Status: 200)
+[2024-12-18 13:19:29] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:29] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:29] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:29] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:29] INFO     [main.log_requests] ✨ GET / completed in 1.53ms (Status: 200)
+[2024-12-18 13:19:29] INFO     [main.log_requests] ✨ GET / completed in 1.53ms (Status: 200)
+[2024-12-18 13:19:34] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:34] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 13:19:34] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:34] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 13:19:34] INFO     [main.log_requests] ✨ GET / completed in 1.53ms (Status: 200)
+[2024-12-18 13:19:34] INFO     [main.log_requests] ✨ GET / completed in 1.53ms (Status: 200)
+[2024-12-18 13:41:34] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:34] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:34] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:34] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:35] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:35] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:35] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:35] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:35] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:35] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:36] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:36] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:36] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:36] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:36] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:36] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:36] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:36] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:36] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:36] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:38] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:38] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:38] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:38] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:39] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:39] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:39] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:39] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:39] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:39] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:51] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:51] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:51] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:51] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:51] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:51] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:51] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:51] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:51] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:51] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:52] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:52] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:52] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:52] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:53] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:53] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:53] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:53] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:53] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:53] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:54] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:54] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:41:54] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:54] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:54] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:41:54] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:54] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:54] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:41:54] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:41:54] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:07] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:07] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:07] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:07] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:08] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:08] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:08] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:08] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:08] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:08] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:09] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:09] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:09] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:09] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:09] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:09] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:09] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:09] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:09] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:09] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:15] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:15] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:15] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:15] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:16] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 13:42:16] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:16] INFO     [main.startup_event] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Environment: development
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 API Version: v0.1.0
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Debug Mode: true
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Host: 0.0.0.0
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:16] INFO     [main.startup_event] 📌 Port: 8000
+[2024-12-18 13:42:16] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:16] INFO     [main.startup_event] ✨ Server is ready to accept connections
+[2024-12-18 13:42:22] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:22] INFO     [main.shutdown_event] 🔄 Initiating graceful shutdown
+[2024-12-18 13:42:22] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 13:42:22] INFO     [main.shutdown_event] 👋 S.A.T.O.R.I. AI backend server shutdown complete
+[2024-12-18 14:32:23] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 14:32:23] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 14:32:23] INFO     [main.lifespan] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 14:32:23] INFO     [main.lifespan] 📌 Environment: development
+[2024-12-18 14:32:23] INFO     [main.lifespan] 📌 API Version: v0.1.0
+[2024-12-18 14:32:23] INFO     [main.lifespan] 📌 Debug Mode: true
+[2024-12-18 14:32:23] INFO     [main.lifespan] 📌 Host: 0.0.0.0
+[2024-12-18 14:32:23] INFO     [main.lifespan] 📌 Port: 8000
+[2024-12-18 14:32:23] INFO     [main.lifespan] ✨ Server is ready to accept connections
+[2024-12-18 14:32:30] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 14:32:30] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 14:32:30] INFO     [main.log_requests] ✨ GET / completed in 0.51ms (Status: 200)
+[2024-12-18 14:33:41] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 14:33:41] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 14:33:41] INFO     [main.log_requests] ✨ GET / completed in 1.05ms (Status: 200)
+[2024-12-18 15:00:23] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 15:00:23] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 15:00:23] INFO     [main.lifespan] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 15:00:23] INFO     [main.lifespan] 📌 Environment: development
+[2024-12-18 15:00:23] INFO     [main.lifespan] 📌 API Version: v0.1.0
+[2024-12-18 15:00:23] INFO     [main.lifespan] 📌 Debug Mode: true
+[2024-12-18 15:00:23] INFO     [main.lifespan] 📌 Host: 0.0.0.0
+[2024-12-18 15:00:23] INFO     [main.lifespan] 📌 Port: 8000
+[2024-12-18 15:00:23] INFO     [main.lifespan] ✨ Server is ready to accept connections
+[2024-12-18 15:00:30] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 15:00:30] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 15:00:30] INFO     [main.log_requests] ✨ GET / completed in 1.01ms (Status: 200)
+[2024-12-18 15:00:42] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 15:00:42] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 15:00:42] INFO     [main.log_requests] ✨ GET / completed in 0.00ms (Status: 200)
+[2024-12-18 15:00:49] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 15:00:49] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 15:00:49] INFO     [main.log_requests] ✨ GET / completed in 0.05ms (Status: 200)
+[2024-12-18 15:00:55] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 15:00:55] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 15:00:55] INFO     [main.log_requests] ✨ GET / completed in 0.00ms (Status: 200)
+[2024-12-18 15:00:59] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 15:00:59] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 15:00:59] INFO     [main.log_requests] ✨ GET / completed in 0.00ms (Status: 200)
+[2024-12-18 16:41:11] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 16:41:11] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 16:41:11] INFO     [main.log_requests] ✨ GET / completed in 7.80ms (Status: 200)
+[2024-12-18 16:41:17] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 16:41:17] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 16:41:17] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 17:11:20] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:11:20] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:11:20] INFO     [main.log_requests] ✨ GET / completed in 1.56ms (Status: 200)
+[2024-12-18 17:11:26] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:11:26] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:11:26] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 17:11:39] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:11:39] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:11:39] INFO     [main.log_requests] ✨ GET / completed in 1.01ms (Status: 200)
+[2024-12-18 17:12:01] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-18 17:12:01] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-18 17:12:01] INFO     [main.lifespan] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-18 17:12:01] INFO     [main.lifespan] 📌 Environment: development
+[2024-12-18 17:12:01] INFO     [main.lifespan] 📌 API Version: v0.1.0
+[2024-12-18 17:12:01] INFO     [main.lifespan] 📌 Debug Mode: true
+[2024-12-18 17:12:01] INFO     [main.lifespan] 📌 Host: 0.0.0.0
+[2024-12-18 17:12:01] INFO     [main.lifespan] 📌 Port: 8000
+[2024-12-18 17:12:01] INFO     [main.lifespan] ✨ Server is ready to accept connections
+[2024-12-18 17:12:09] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:09] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:09] INFO     [main.log_requests] ✨ GET / completed in 1.05ms (Status: 200)
+[2024-12-18 17:12:14] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:14] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:14] INFO     [main.log_requests] ✨ GET / completed in 0.51ms (Status: 200)
+[2024-12-18 17:12:19] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:19] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:19] INFO     [main.log_requests] ✨ GET / completed in 0.00ms (Status: 200)
+[2024-12-18 17:12:26] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:26] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:26] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 17:12:32] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:32] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:32] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
+[2024-12-18 17:12:49] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 17:12:49] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 17:12:49] INFO     [main.log_requests] ✨ GET / completed in 0.51ms (Status: 200)
+[2024-12-18 19:12:59] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-18 19:12:59] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-18 19:12:59] INFO     [main.log_requests] ✨ GET / completed in 8.33ms (Status: 200)

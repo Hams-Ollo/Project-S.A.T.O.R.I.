@@ -8,6 +8,8 @@ import logging
 from typing import Optional, Dict, Any
 import atexit
 
+from .voice import VoiceComponent
+
 logger = logging.getLogger(__name__)
 
 class ChatInterface:
@@ -16,14 +18,94 @@ class ChatInterface:
         self.messages = []
         self.is_connected = False
         self.should_run = True
+        self.voice = VoiceComponent()
         
-        # Initialize session state for messages if not exists
+        # Initialize session state
         if 'messages' not in st.session_state:
             st.session_state.messages = []
+        if 'voice_enabled' not in st.session_state:
+            st.session_state.voice_enabled = False
+        if 'recording' not in st.session_state:
+            st.session_state.recording = False
             
         # Initialize the WebSocket connection
         asyncio.run(self.connect_websocket())
-
+        
+    def render(self):
+        """Render the chat interface."""
+        # Voice control section
+        with st.sidebar:
+            st.subheader("Voice Controls")
+            st.session_state.voice_enabled = st.toggle("Enable Voice Input", st.session_state.voice_enabled)
+            
+            if st.session_state.voice_enabled:
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button("Start Recording" if not st.session_state.recording else "Stop Recording"):
+                        if not st.session_state.recording:
+                            self.start_voice_recording()
+                        else:
+                            self.stop_voice_recording()
+                            
+                with col2:
+                    if st.button("Upload Voice Note"):
+                        self.handle_voice_note_upload()
+        
+        # Main chat interface
+        st.title("SATORI AI Chat")
+        
+        # Display messages
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.write(message["content"])
+        
+        # Input section
+        if prompt := st.chat_input("Type your message here..."):
+            self.handle_user_input(prompt)
+            
+    def start_voice_recording(self):
+        """Start recording voice input."""
+        st.session_state.recording = True
+        asyncio.create_task(self.handle_live_transcription())
+        
+    def stop_voice_recording(self):
+        """Stop recording voice input."""
+        st.session_state.recording = False
+        if hasattr(self, 'voice_task'):
+            self.voice_task.cancel()
+        
+    async def handle_live_transcription(self):
+        """Handle live voice transcription."""
+        try:
+            async for transcript in self.voice.start_live_transcription():
+                if transcript and not st.session_state.recording:
+                    # Send transcribed text as message
+                    await self.send_message(transcript)
+                    break
+        except Exception as e:
+            logger.error(f"Error in live transcription: {str(e)}")
+            st.error("Error processing voice input. Please try again.")
+            
+    def handle_voice_note_upload(self):
+        """Handle voice note file upload."""
+        uploaded_file = st.file_uploader("Upload Voice Note", type=['wav', 'mp3'])
+        if uploaded_file:
+            # Save uploaded file
+            file_path = f"frontend/static/audio/input/{uploaded_file.name}"
+            with open(file_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+            
+            # Transcribe audio
+            transcription = self.voice.transcribe_audio_file(file_path)
+            if transcription:
+                text = transcription["results"]["channels"][0]["alternatives"][0]["transcript"]
+                if text:
+                    asyncio.run(self.send_message(text))
+                    
+    def handle_user_input(self, text: str):
+        """Handle user text input."""
+        asyncio.run(self.send_message(text))
+        
     async def connect_websocket(self):
         """Establish WebSocket connection."""
         try:
@@ -108,32 +190,6 @@ class ChatInterface:
                     st.info(message["content"])
                 else:
                     st.write(f"{message['sender_id']}: {message['content']}")
-
-    def render(self):
-        """Render the chat interface."""
-        st.title("💬 Chat")
-        
-        # Display chat messages
-        chat_container = st.container()
-        with chat_container:
-            for message in st.session_state.messages:
-                self.render_message(message)
-        
-        # Input field for new messages
-        with st.container():
-            message_input = st.text_input("Message", key="message_input")
-            col1, col2 = st.columns([4, 1])
-            
-            with col1:
-                if st.button("Send", use_container_width=True):
-                    if message_input.strip():
-                        asyncio.run(self.send_message(message_input.strip()))
-                        st.session_state.message_input = ""  # Clear input
-            
-            with col2:
-                if st.button("Clear", use_container_width=True):
-                    st.session_state.messages = []
-                    st.experimental_rerun()
 
 def initialize_chat():
     """Initialize and return chat interface."""

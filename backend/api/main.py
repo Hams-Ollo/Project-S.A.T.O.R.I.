@@ -12,6 +12,7 @@ from typing import Callable
 import sys
 import signal
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 # Add the backend directory to the Python path
 backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,11 @@ from core.websocket.manager import manager
 from api.routes.websocket import router as websocket_router
 from api.routes.voice import router as voice_router
 
+# Load environment variables from project root
+project_root = Path(__file__).resolve().parent.parent.parent
+env_path = project_root / '.env'
+load_dotenv(dotenv_path=env_path)
+
 # Initialize logger
 logger = create_logger(
     name="satori.api",
@@ -29,9 +35,8 @@ logger = create_logger(
     log_dir="logs"
 )
 
-# Load environment variables
-load_dotenv()
 logger.info("🔧 Loading environment variables")
+logger.debug(f"Looking for .env file at: {env_path}")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

@@ -75,77 +75,7 @@ Special Considerations:
 
 Save this context as `project_context_[PROJECT_NAME].txt` in the root folder.
 
-## 🔍 3. Initial Project Analysis Prompt
-
-Please perform a comprehensive analysis of [PROJECT_NAME]. Focus on:
-1. Overall architecture and structure
-2. Main components and their interactions
-3. Key dependencies and technologies used
-4. Current version and status
-5. Existing documentation quality
-6. Project-specific patterns and practices
-7. Integration points and external dependencies
-8. Development workflow and processes
-
-Generate a detailed report including:
-- Project overview and context
-- Technology stack analysis
-- Key components and their roles
-- Areas needing attention (prioritized)
-- Initial recommendations (categorized)
-- Risk assessment
-- Quick wins identified
-- Long-term improvement suggestions
-
-Save the analysis report as `initial_analysis_[PROJECT_NAME].txt` in the root folder, using contextual emojis for each section:
-- 📋 Project Overview
-- 🔧 Technology Stack
-- 🧩 Components
-- ⚠️ Areas Needing Attention
-- 💡 Recommendations
-- ⚖️ Risk Assessment
-- 🎯 Quick Wins
-- 🚀 Long-term Improvements
-
-## 🔬 4. Code Review Prompts
-
-### 4.1 Initial Code Review
-Please conduct a thorough code review of [PROJECT_NAME]. Focus on:
-1. Code quality and standards
-2. Security practices
-3. Performance optimizations
-4. Error handling
-5. API design
-6. Testing coverage
-7. Project-specific patterns
-8. Technology-specific best practices
-9. Cross-cutting concerns
-10. Technical debt indicators
-
-Generate a comprehensive code_review_[PROJECT_NAME].txt file that includes:
-- Detailed findings by category
-- Severity levels for issues
-- Specific recommendations
-- Code examples for improvements
-- Best practice violations
-- Security concerns
-- Performance bottlenecks
-- Technical debt assessment
-- Improvement roadmap
-- Priority matrix
-
-Save the code review results as `code_review_[PROJECT_NAME].txt` in the root folder, using these emojis for categorization:
-- 📊 Overview
-- 🔍 Detailed Findings
-- ⚠️ Issues by Severity
-- 💡 Recommendations
-- 🎯 Code Examples
-- ⚡ Performance Issues
-- 🔒 Security Concerns
-- 📈 Technical Debt
-- 🚀 Improvement Plan
-- ⚖️ Priority Matrix
-
+## 🔍 3.  
 ### 4.2 Work Notes Generation
 Based on the code review, please generate a detailed work_notes_[PROJECT_NAME].txt file containing:
 1. Current project status

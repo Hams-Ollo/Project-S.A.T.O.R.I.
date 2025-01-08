@@ -7,6 +7,7 @@ import logging
 import asyncio
 from threading import Thread
 from queue import Queue, Empty
+from pathlib import Path
 
 # Configure logging
 logging.basicConfig(
@@ -35,21 +36,32 @@ class SatoriApp:
         self.is_running = False
         self.backend_queue = Queue()
         self.frontend_queue = Queue()
+        self.project_root = Path(__file__).resolve().parent
 
     def start(self):
         """Start both backend and frontend servers."""
         try:
             logger.info("🚀 Starting SATORI AI...")
             
+            # Add backend directory to Python path
+            backend_dir = str(self.project_root / "backend")
+            if backend_dir not in sys.path:
+                sys.path.append(backend_dir)
+            
             # Start backend server with uvicorn
             logger.info("📡 Starting backend server...")
+            env = os.environ.copy()
+            env['PYTHONPATH'] = f"{backend_dir}{os.pathsep}{env.get('PYTHONPATH', '')}"
+            
             self.backend_process = subprocess.Popen(
-                ["uvicorn", "backend.api.main:app", "--host", "0.0.0.0", "--port", "8000"],
+                [sys.executable, "-m", "uvicorn", "api.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
                 bufsize=1,
                 universal_newlines=True,
+                env=env,
+                cwd=backend_dir,
                 creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if os.name == 'nt' else 0
             )
             

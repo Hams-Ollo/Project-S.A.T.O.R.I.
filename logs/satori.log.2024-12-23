@@ -1,0 +1,18 @@
+[2024-12-23 11:33:45] INFO     [main.<module>] 🔧 Loading environment variables
+[2024-12-23 11:33:45] INFO     [main.<module>] 🔒 Configuring CORS settings
+[2024-12-23 11:33:45] INFO     [main.lifespan] 🚀 Starting S.A.T.O.R.I. AI backend server
+[2024-12-23 11:33:45] INFO     [main.lifespan] 📌 Environment: development
+[2024-12-23 11:33:45] INFO     [main.lifespan] 📌 API Version: v0.1.0
+[2024-12-23 11:33:45] INFO     [main.lifespan] 📌 Debug Mode: true
+[2024-12-23 11:33:45] INFO     [main.lifespan] 📌 Host: 0.0.0.0
+[2024-12-23 11:33:45] INFO     [main.lifespan] 📌 Port: 8000
+[2024-12-23 11:33:45] INFO     [main.lifespan] ✨ Server is ready to accept connections
+[2024-12-23 11:33:52] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-23 11:33:52] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-23 11:33:52] INFO     [main.log_requests] ✨ GET / completed in 0.51ms (Status: 200)
+[2024-12-23 11:36:51] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-23 11:36:51] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-23 11:36:51] INFO     [main.log_requests] ✨ GET / completed in 0.51ms (Status: 200)
+[2024-12-23 11:37:02] DEBUG    [main.log_requests] 📥 Incoming GET request to /
+[2024-12-23 11:37:02] DEBUG    [main.root] 📡 Processing root endpoint request
+[2024-12-23 11:37:02] INFO     [main.log_requests] ✨ GET / completed in 0.53ms (Status: 200)
